@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Online Store</title>
+    <title>lab5 - Online Store</title>
 </head>
 
 <body>
@@ -20,7 +20,8 @@
        
         while (!Number.isInteger(quantity) || quantity < 1 || quantity > 99) {
             quantity = Number(prompt("Please enter a number from 1 to 99."));
-
+        }
+        
         let today = new Date();
         let hour = today.getHours();
 
@@ -41,7 +42,7 @@
             greeting + " " + name + ", Thank you for ordering!";
 
         document.getElementById("order").innerHTML =
-            "You ordered " + quantity + " " + item +;
+            "You ordered " + quantity + " " + item;
 
         document.getElementById("arrival").innerHTML =
             "Your order will arrive on " + arrivalDate.toDateString();
