@@ -1,11 +1,50 @@
 <html>
 <head>
-    <title>My Online Store</title>
+    <title>Online Store</title>
 </head>
 
 <body>
+    <h1>Welcome the store</h1>
 
+    <h2 id="greeting"></h2>
+    <p id="order"></p>
+    <p id="arrival"></p>
+    
     <script>
+    
+        alert("Welcome to the store!");
+        
+        let name = prompt("What is your name?");
+        let item = prompt("What item would you like to buy?");
+        let quantity = Number(prompt("How many would you like? (1-99)"));
+       
+        while (!Number.isInteger(quantity) || quantity < 1 || quantity > 99) {
+            quantity = Number(prompt("Please enter a number from 1 to 99."));
+
+        let today = new Date();
+        let hour = today.getHours();
+
+        let greeting;
+
+        if (hour < 12) {
+            greeting = "Good Morning";
+        } else if (hour < 18) {
+            greeting = "Good Afternoon";
+        } else {
+            greeting = "Good Evening";
+        }
+
+        let arrivalDate = new Date();
+        arrivalDate.setDate(today.getDate() + 7);
+
+        document.getElementById("greeting").innerHTML =
+            greeting + " " + name + ", Thank you for ordering!";
+
+        document.getElementById("order").innerHTML =
+            "You ordered " + quantity + " " + item +;
+
+        document.getElementById("arrival").innerHTML =
+            "Your order will arrive on " + arrivalDate.toDateString();
 
     </script>
 
